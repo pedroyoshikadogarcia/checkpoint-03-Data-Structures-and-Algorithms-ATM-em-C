@@ -25,3 +25,22 @@ void exibirMenu() {
     printf("Escolha uma opcao: ");
 }
 
+ 
+void registrarOperacao(char operacao[]) {
+ 
+    if(totalOperacoes == 3) {
+        strcpy(historico[0], historico[1]);
+        strcpy(historico[1], historico[2]);
+        strcpy(historico[2], operacao);
+    } else {
+        strcpy(historico[totalOperacoes], operacao);
+        totalOperacoes++;
+    }
+}
+ 
+void consultarSaldo(float saldo) {
+ 
+    printf("\n========== SALDO ==========\n");
+    printf("Saldo atual: R$ %.2f\n", saldo);
+    printf("===========================\n");
+}
