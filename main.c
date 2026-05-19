@@ -92,3 +92,58 @@ void mostrarExtrato(float saldo) {
     printf("\nSaldo atual: R$ %.2f\n", saldo);
     printf("-----------------------------\n");
 }
+
+int main() {
+ 
+    int opcao;
+    float saldo = 500.00;
+ 
+    do {
+ 
+        limparTela();
+ 
+        exibirMenu();
+ 
+        scanf("%d", &opcao);
+ 
+        switch(opcao) {
+ 
+            case 1:
+                limparTela();
+                consultarSaldo(saldo);
+                pausar();
+                break;
+ 
+            case 2:
+                limparTela();
+                saldo = realizarSaque(saldo);
+                pausar();
+                break;
+ 
+            case 3:
+                limparTela();
+                saldo = realizarDeposito(saldo);
+                pausar();
+                break;
+ 
+            case 4:
+                limparTela();
+                mostrarExtrato(saldo);
+                pausar();
+                break;
+ 
+            case 0:
+                limparTela();
+                printf("Encerrando sistema...\n");
+                printf("Obrigado por utilizar nosso ATM!\n");
+                break;
+ 
+            default:
+                printf("\nOpcao invalida!\n");
+                pausar();
+        }
+ 
+    } while(opcao != 0);
+ 
+    return 0;
+}
