@@ -5,9 +5,13 @@
 **Integrantes:**
 
 Lucas Klein da Veiga RM: 570029
+
 Pedro Andreassa Zamai RM: 569318
+
 Pedro Yoshikado Garcia RM: 570449
+
 Thiago Maluf Hofmann RM: 569852
+
 Rafael Ferreirinha Quaresma RM: 571949
 
 ---
