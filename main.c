@@ -70,3 +70,25 @@ float realizarDeposito(float saldo) {
  
     return saldo;
 }
+ 
+void mostrarExtrato(float saldo) {
+ 
+    int i;
+ 
+    printf("\n--------- EXTRATO ----------\n");
+ 
+    if(totalOperacoes == 0) {
+ 
+        printf("Nenhuma operacao realizada.\n");
+ 
+    } else {
+ 
+        for(i = 0; i < totalOperacoes; i++) {
+ 
+            printf("%d. %s\n", i + 1, historico[i]);
+        }
+    }
+ 
+    printf("\nSaldo atual: R$ %.2f\n", saldo);
+    printf("-----------------------------\n");
+}
