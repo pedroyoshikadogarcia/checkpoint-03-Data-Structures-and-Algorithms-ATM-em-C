@@ -40,7 +40,33 @@ void registrarOperacao(char operacao[]) {
  
 void consultarSaldo(float saldo) {
  
-    printf("\n========== SALDO ==========\n");
+    printf("\n---------- SALDO ----------\n");
     printf("Saldo atual: R$ %.2f\n", saldo);
-    printf("===========================\n");
+    printf("-----------------------\n");
+}
+
+float realizarDeposito(float saldo) {
+ 
+    float valor;
+    char operacao[100];
+ 
+    printf("\nDigite o valor do deposito: R$ ");
+    scanf("%f", &valor);
+ 
+    if(valor > 0) {
+ 
+        saldo += valor;
+ 
+        printf("\nDeposito realizado com sucesso!\n");
+        printf("Novo saldo: R$ %.2f\n", saldo);
+ 
+        sprintf(operacao, "Deposito: +R$ %.2f", valor);
+        registrarOperacao(operacao);
+ 
+    } else {
+ 
+        printf("\nValor invalido!\n");
+    }
+ 
+    return saldo;
 }
