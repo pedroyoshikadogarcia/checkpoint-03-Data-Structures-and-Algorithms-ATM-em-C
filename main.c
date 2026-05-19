@@ -70,6 +70,40 @@ float realizarDeposito(float saldo) {
  
     return saldo;
 }
+
+float realizarSaque(float saldo) {
+ 
+    float valor;
+    char operacao[100];
+ 
+    printf("\nDigite o valor do saque: R$ ");
+    scanf("%f", &valor);
+ 
+    if(valor > 1000) {
+ 
+        printf("\nLimite diario excedido!\n");
+ 
+    } else if(valor <= 0) {
+ 
+        printf("\nValor invalido!\n");
+ 
+    } else if(valor > saldo) {
+ 
+        printf("\nSaldo insuficiente!\n");
+ 
+    } else {
+ 
+        saldo -= valor;
+ 
+        printf("\nSaque realizado com sucesso!\n");
+        printf("Novo saldo: R$ %.2f\n", saldo);
+ 
+        sprintf(operacao, "Saque: -R$ %.2f", valor);
+        registrarOperacao(operacao);
+    }
+ 
+    return saldo;
+}
  
 void mostrarExtrato(float saldo) {
  
